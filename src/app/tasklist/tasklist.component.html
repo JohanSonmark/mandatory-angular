@@ -1,0 +1,14 @@
+<div class="header">
+  {{status}}
+
+  <ng-container *ngFor="let task of tasks">
+
+    <task
+      *ngIf="status == task.status"
+      [task]="task"
+      (statusChanged)="handleStatusChanged($event)">
+    </task>
+
+  </ng-container>
+
+</div>

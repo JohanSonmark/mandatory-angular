@@ -1,0 +1,25 @@
+<div class="task">
+  <div class="header">
+    <div>
+      {{task.title}}
+    </div>
+      <select
+        id="status-type"
+        name="selectedStatusType"
+        #selectedStatusType
+        (change)="handleStatusChanged(selectedStatusType.value)"
+        [value]="task.status">
+        <option *ngFor="let st of utilityService.getStatusTypes()">
+          {{st}}
+        </option>
+      </select>
+  </div>
+
+  <hr>
+  <div class="body">
+   {{task.description}}
+  </div>
+
+
+
+</div>
